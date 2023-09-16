@@ -16,6 +16,8 @@ struct DefaultCalculatorUseCase: CalculatorUseCase {
         case .add, .subtract, .multifly, .divide:
             guard let operand else { break }
             calculate(by: `operator`, with: operand)
+        case .clear:
+            currentValue = .zero
         case .signChange:
             currentValue = -currentValue
         default:

@@ -17,6 +17,7 @@
 		BFD5EE182AB57C9200048F61 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EE172AB57C9200048F61 /* Operator.swift */; };
 		BFD5EE252AB58E2700048F61 /* CalculatorUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EE242AB58E2700048F61 /* CalculatorUseCaseTests.swift */; };
 		BFD5EE2C2AB5902D00048F61 /* DefaultCalculatorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EE2B2AB5902D00048F61 /* DefaultCalculatorUseCase.swift */; };
+		BFD831F12AB5C6AA00599965 /* CalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD831F02AB5C6AA00599965 /* CalculatorViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		BFD5EE222AB58E2700048F61 /* GunculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GunculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD5EE242AB58E2700048F61 /* CalculatorUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUseCaseTests.swift; sourceTree = "<group>"; };
 		BFD5EE2B2AB5902D00048F61 /* DefaultCalculatorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCalculatorUseCase.swift; sourceTree = "<group>"; };
+		BFD831F02AB5C6AA00599965 /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				BFD5EE242AB58E2700048F61 /* CalculatorUseCaseTests.swift */,
+				BFD831F02AB5C6AA00599965 /* CalculatorViewModelTests.swift */,
 			);
 			path = GunculatorTests;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD831F12AB5C6AA00599965 /* CalculatorViewModelTests.swift in Sources */,
 				BFD5EE252AB58E2700048F61 /* CalculatorUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
