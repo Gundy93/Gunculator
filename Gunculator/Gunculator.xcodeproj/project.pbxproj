@@ -16,6 +16,7 @@
 		BFD5EE152AB57C3800048F61 /* CalculatorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EE142AB57C3800048F61 /* CalculatorUseCase.swift */; };
 		BFD5EE182AB57C9200048F61 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EE172AB57C9200048F61 /* Operator.swift */; };
 		BFD5EE252AB58E2700048F61 /* CalculatorUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EE242AB58E2700048F61 /* CalculatorUseCaseTests.swift */; };
+		BFD5EE2C2AB5902D00048F61 /* DefaultCalculatorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EE2B2AB5902D00048F61 /* DefaultCalculatorUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		BFD5EE172AB57C9200048F61 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		BFD5EE222AB58E2700048F61 /* GunculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GunculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD5EE242AB58E2700048F61 /* CalculatorUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUseCaseTests.swift; sourceTree = "<group>"; };
+		BFD5EE2B2AB5902D00048F61 /* DefaultCalculatorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCalculatorUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				BFD5EE1D2AB58DCA00048F61 /* Protocol */,
+				BFD5EE2B2AB5902D00048F61 /* DefaultCalculatorUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			files = (
 				BFD5EDFD2AB5780A00048F61 /* CalculatorViewController.swift in Sources */,
 				BFD5EE182AB57C9200048F61 /* Operator.swift in Sources */,
+				BFD5EE2C2AB5902D00048F61 /* DefaultCalculatorUseCase.swift in Sources */,
 				BFD5EDF92AB5780A00048F61 /* AppDelegate.swift in Sources */,
 				BFD5EE152AB57C3800048F61 /* CalculatorUseCase.swift in Sources */,
 				BFD5EE102AB57B1F00048F61 /* CalculatorViewModel.swift in Sources */,
