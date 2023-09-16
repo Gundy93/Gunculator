@@ -116,7 +116,7 @@
 		BFD5EE132AB57BED00048F61 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				BFD5EE142AB57C3800048F61 /* CalculatorUseCase.swift */,
+				BFD5EE1D2AB58DCA00048F61 /* Protocol */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -127,6 +127,14 @@
 				BFD5EE172AB57C9200048F61 /* Operator.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		BFD5EE1D2AB58DCA00048F61 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BFD5EE142AB57C3800048F61 /* CalculatorUseCase.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
