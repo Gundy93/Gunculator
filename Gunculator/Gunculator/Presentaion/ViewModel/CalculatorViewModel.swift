@@ -9,9 +9,17 @@ import Foundation
 
 final class CalculatorViewModel {
     
+    var delegate: CalculatorViewModelDelegate?
     private var useCase: CalculatorUseCase
     private var currentOperator: Operator?
-    private(set) var inputted: String = String()
+    private(set) var inputted: String = String() {
+        didSet {
+            delegate?.viewModel(willDisplay: text)
+        }
+    }
+    private var text: String {
+        return inputted == "-" || inputted.isEmpty ? inputted + "0" : inputted
+    }
     private(set) var expressions: [String] = []
     private let numberFormatter: NumberFormatter = NumberFormatter()
     
@@ -89,6 +97,7 @@ final class CalculatorViewModel {
         let expression = "\(lhs) \(sign) \(rhs) = \(result)"
         
         expressions.append(expression)
+        delegate?.viewModel(willAppend: expression)
         inputted.removeAll()
     }
 }
