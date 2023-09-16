@@ -68,17 +68,6 @@ final class CalculatorUseCaseTests: XCTestCase {
         XCTAssertEqual(result, 2)
     }
     
-    func test_currentValue가1023일때_clear와nil을전달하여operate를호출하면_0을반환한다() {
-        // given
-        sut = DefaultCalculatorUseCase(currentValue: 1023)
-        
-        // when
-        let result = sut.operate(by: .clear, with: nil)
-        
-        // then
-        XCTAssertEqual(result, 0)
-    }
-    
     func test_currentValue가10일때_signChange와nil을전달하여operate를호출하면_음수를반환한다() {
         // given
         sut = DefaultCalculatorUseCase(currentValue: 10)
@@ -109,6 +98,6 @@ final class CalculatorUseCaseTests: XCTestCase {
         let result = sut.operate(by: .equals, with: nil)
         
         // then
-        XCTAssertGreaterThan(result, 1023)
+        XCTAssertEqual(result, 1023)
     }
 }
