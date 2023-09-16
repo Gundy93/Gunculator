@@ -38,4 +38,8 @@ struct DefaultCalculatorUseCase: CalculatorUseCase {
             break
         }
     }
+    
+    mutating func setCurrentValue(_ number: Decimal) {
+        currentValue = number
+    }
 }
