@@ -11,7 +11,7 @@ struct DefaultCalculatorUseCase: CalculatorUseCase {
     
     var currentValue: Decimal
     
-    mutating func operate(by `operator`: Operaotor, with operand: Decimal?) -> Decimal {
+    mutating func operate(by `operator`: Operator, with operand: Decimal?) -> Decimal {
         switch `operator` {
         case .add, .subtract, .multifly, .divide:
             guard let operand else { break }
@@ -24,7 +24,7 @@ struct DefaultCalculatorUseCase: CalculatorUseCase {
         return currentValue
     }
     
-    private mutating func calculate(by `operator`: Operaotor, with operand: Decimal) {
+    private mutating func calculate(by `operator`: Operator, with operand: Decimal) {
         switch `operator` {
         case .add:
             currentValue += operand

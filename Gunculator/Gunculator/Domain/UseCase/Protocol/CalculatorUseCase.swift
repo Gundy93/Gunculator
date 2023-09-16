@@ -11,5 +11,5 @@ protocol CalculatorUseCase {
     
     var currentValue: Decimal { get set }
     
-    mutating func operate(by `operator`: Operaotor, with operand: Decimal?) -> Decimal
+    mutating func operate(by `operator`: Operator, with operand: Decimal?) -> Decimal
 }

@@ -5,7 +5,7 @@
 //  Created by Gundy on 2023/09/16.
 //
 
-enum Operaotor: String {
+enum Operator: String {
     
     case clear = "C"
     case backspace = "←"

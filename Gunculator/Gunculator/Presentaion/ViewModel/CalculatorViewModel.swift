@@ -10,7 +10,7 @@ import Foundation
 final class CalculatorViewModel {
     
     private var useCase: CalculatorUseCase
-    private var currentOperator: Operaotor?
+    private var currentOperator: Operator?
     private(set) var inputted: String = String()
     private(set) var expressions: [String] = []
     
@@ -20,5 +20,5 @@ final class CalculatorViewModel {
     
     func input(_ number: String) {}
     
-    func operate(by `operator`: Operaotor) {}
+    func operate(by `operator`: Operator) {}
 }
