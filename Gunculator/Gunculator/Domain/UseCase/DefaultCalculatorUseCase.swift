@@ -9,7 +9,7 @@ import Foundation
 
 struct DefaultCalculatorUseCase: CalculatorUseCase {
     
-    var currentValue: Decimal = .zero
+    var currentValue: Decimal
     
     func operate(by operator: Operaotor, with operand: Decimal?) -> Decimal {
         return .zero
