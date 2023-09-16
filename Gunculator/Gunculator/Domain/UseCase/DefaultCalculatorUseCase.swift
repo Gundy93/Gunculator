@@ -18,8 +18,6 @@ struct DefaultCalculatorUseCase: CalculatorUseCase {
             calculate(by: `operator`, with: operand)
         case .clear:
             currentValue = .zero
-        case .signChange:
-            currentValue = -currentValue
         default:
             break
         }
