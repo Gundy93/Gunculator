@@ -9,7 +9,7 @@ import Foundation
 
 final class CalculatorViewModel {
     
-    var delegate: CalculatorViewModelDelegate?
+    weak var delegate: CalculatorViewModelDelegate?
     private var useCase: CalculatorUseCase
     private var currentOperator: Operator? {
         didSet {
@@ -22,7 +22,7 @@ final class CalculatorViewModel {
         }
     }
     private var text: String? {
-        let text = inputted == "-" || inputted.isEmpty ? inputted + "0" : inputted
+        let text = inputted.isEmpty ? "0" : inputted
         guard let decimal = Decimal(string: text) else { return text }
         
         return numberFormatter.string(from: decimal as NSNumber)
@@ -96,7 +96,7 @@ final class CalculatorViewModel {
     private func changeSign() {
         if inputted.first == "-" {
             inputted.removeFirst()
-        } else {
+        } else if inputted.isEmpty == false {
             inputted = "-" + inputted
         }
     }

@@ -5,7 +5,7 @@
 //  Created by Gundy on 2023/09/16.
 //
 
-protocol CalculatorViewModelDelegate {
+protocol CalculatorViewModelDelegate: AnyObject {
     
     func viewModel(willDisplayNumber inputted: String?)
     func viewModel(willDisplaySign inputted: String?)
