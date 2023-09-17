@@ -7,6 +7,7 @@
 
 protocol CalculatorViewModelDelegate {
     
-    func viewModel(willDisplay inputted: String)
+    func viewModel(willDisplayNumber inputted: String)
+    func viewModel(willDisplaySign inputted: String?)
     func viewModel(willAppend expression: String)
 }

@@ -11,10 +11,14 @@ final class CalculatorViewModel {
     
     var delegate: CalculatorViewModelDelegate?
     private var useCase: CalculatorUseCase
-    private var currentOperator: Operator?
+    private var currentOperator: Operator? {
+        didSet {
+            delegate?.viewModel(willDisplaySign: currentOperator?.rawValue)
+        }
+    }
     private(set) var inputted: String = String() {
         didSet {
-            delegate?.viewModel(willDisplay: text)
+            delegate?.viewModel(willDisplayNumber: text)
         }
     }
     private var text: String {
