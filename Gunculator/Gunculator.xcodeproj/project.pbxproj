@@ -11,6 +11,7 @@
 		BFD0E5212AB66B5900C41CFC /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD0E5202AB66B5900C41CFC /* UIColor+.swift */; };
 		BFD0E5252AB66E5100C41CFC /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD0E5242AB66E5100C41CFC /* UIStackView+.swift */; };
 		BFD0E5272AB674BA00C41CFC /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD0E5262AB674BA00C41CFC /* UIButton+.swift */; };
+		BFD0E5292AB6A23E00C41CFC /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD0E5282AB6A23E00C41CFC /* UILabel+.swift */; };
 		BFD5EDF92AB5780A00048F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EDF82AB5780A00048F61 /* AppDelegate.swift */; };
 		BFD5EDFB2AB5780A00048F61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EDFA2AB5780A00048F61 /* SceneDelegate.swift */; };
 		BFD5EDFD2AB5780A00048F61 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EDFC2AB5780A00048F61 /* CalculatorViewController.swift */; };
@@ -39,6 +40,7 @@
 		BFD0E5202AB66B5900C41CFC /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		BFD0E5242AB66E5100C41CFC /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		BFD0E5262AB674BA00C41CFC /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		BFD0E5282AB6A23E00C41CFC /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		BFD5EDF52AB5780A00048F61 /* Gunculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gunculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD5EDF82AB5780A00048F61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFD5EDFA2AB5780A00048F61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				BFD0E5202AB66B5900C41CFC /* UIColor+.swift */,
 				BFD0E5242AB66E5100C41CFC /* UIStackView+.swift */,
 				BFD0E5262AB674BA00C41CFC /* UIButton+.swift */,
+				BFD0E5282AB6A23E00C41CFC /* UILabel+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				BFD5EDF92AB5780A00048F61 /* AppDelegate.swift in Sources */,
 				BFD5EE152AB57C3800048F61 /* CalculatorUseCase.swift in Sources */,
 				BFD0E5252AB66E5100C41CFC /* UIStackView+.swift in Sources */,
+				BFD0E5292AB6A23E00C41CFC /* UILabel+.swift in Sources */,
 				BFD5EE102AB57B1F00048F61 /* CalculatorViewModel.swift in Sources */,
 				BFD0E5272AB674BA00C41CFC /* UIButton+.swift in Sources */,
 				BFD5EDFB2AB5780A00048F61 /* SceneDelegate.swift in Sources */,
