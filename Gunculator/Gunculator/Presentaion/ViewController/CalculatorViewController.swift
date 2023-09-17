@@ -156,7 +156,7 @@ final class CalculatorViewController: UIViewController {
 
 extension CalculatorViewController: CalculatorViewModelDelegate {
     
-    func viewModel(willDisplayNumber inputted: String) {
+    func viewModel(willDisplayNumber inputted: String?) {
         inputLabel.text = inputted
     }
     
