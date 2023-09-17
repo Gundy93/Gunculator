@@ -148,6 +148,10 @@ final class CalculatorViewController: UIViewController {
         logScrollView.setContentOffset(CGPoint(x: 0, y: offset),
                                        animated: true)
     }
+    
+    private func clearAllExpressions() {
+        logStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
+    }
 }
 
 extension CalculatorViewController: CalculatorViewModelDelegate {
@@ -163,5 +167,9 @@ extension CalculatorViewController: CalculatorViewModelDelegate {
     func viewModel(willAppend expression: String) {
         appendLogLabel(expression)
         scrollToLast()
+    }
+    
+    func viewModelDidClear() {
+        clearAllExpressions()
     }
 }

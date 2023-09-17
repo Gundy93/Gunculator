@@ -44,6 +44,7 @@ final class CalculatorViewModel {
             removeLast()
         case .clear:
             clear()
+            delegate?.viewModelDidClear()
         case .signChange:
             changeSign()
         case .equals:
