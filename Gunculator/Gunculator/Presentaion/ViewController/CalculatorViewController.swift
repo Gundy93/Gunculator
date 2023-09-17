@@ -10,8 +10,18 @@ import UIKit
 final class CalculatorViewController: UIViewController {
     
     private let viewModel: CalculatorViewModel = CalculatorViewModel()
+    private let containerStackView: UIStackView = UIStackView(spacing: 20,
+                                                              axis: .vertical)
+    private let logScrollView: UIScrollView = UIScrollView()
+    private let logStackView: UIStackView = UIStackView(spacing: 8,
+                                                        axis: .vertical)
+    private lazy var screenStackView: UIStackView = UIStackView(arrangedSubviews: [signLabel, inputLabel], spacing: 8)
+    private let signLabel: UILabel = UILabel(font: .preferredFont(forTextStyle: .largeTitle))
+    private let inputLabel: UILabel = UILabel(text: "0",
+                                              font: .preferredFont(forTextStyle: .largeTitle),
+                                              textAlignment: .right)
     private let padStackView: UIStackView = UIStackView(spacing: 8,
-                                                axis: .vertical,
+                                                        axis: .vertical,
                                                         distribution: .fillEqually)
     private lazy var firstRowStackView: UIStackView = UIStackView(arrangedSubviews: [makeOperatorButton("C", isUpperPad: true), makeOperatorButton("←", isUpperPad: true), makeOperatorButton("⁺⁄₋", isUpperPad: true), makeOperatorButton("÷")],
                                                                   spacing: 8,
@@ -50,7 +60,9 @@ final class CalculatorViewController: UIViewController {
     }
     
     private func configureViewHierarchy() {
-        view.addSubview(padStackView)
+        view.addSubview(containerStackView)
+        [logScrollView, screenStackView, padStackView].forEach({ containerStackView.addArrangedSubview($0) })
+        logScrollView.addSubview(logStackView)
         [firstRowStackView, secondRowStackView, thirdRowStackView, forthRowStackView, fifthRowStackView].forEach({ padStackView.addArrangedSubview($0) })
     }
     
@@ -61,13 +73,19 @@ final class CalculatorViewController: UIViewController {
               let zero = fifthRowStackView.arrangedSubviews.first else { return }
         
         NSLayoutConstraint.activate([
-            padStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
-            padStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
-            padStackView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -20),
+            containerStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
+            containerStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
+            containerStackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
+            containerStackView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -20),
+            logStackView.leadingAnchor.constraint(equalTo: logScrollView.leadingAnchor),
+            logStackView.trailingAnchor.constraint(equalTo: logScrollView.trailingAnchor),
+            logStackView.topAnchor.constraint(lessThanOrEqualTo: logScrollView.topAnchor),
+            logStackView.bottomAnchor.constraint(equalTo: logScrollView.bottomAnchor),
             first.widthAnchor.constraint(equalTo: first.heightAnchor),
             last.widthAnchor.constraint(equalTo: last.heightAnchor),
             zero.widthAnchor.constraint(equalTo: last.widthAnchor, multiplier: 2, constant: 8)
         ])
+        signLabel.setContentHuggingPriority(.required, for: .horizontal)
     }
     
     private func makeOperatorButton(_ sign: String, isUpperPad: Bool = false) -> UIButton {
@@ -106,5 +124,20 @@ final class CalculatorViewController: UIViewController {
         }
         
         return action
+    }
+    
+    private func appendLogLabel(_ expression: String) {
+        let label = UILabel(text: expression,
+                            font: .preferredFont(forTextStyle: .body))
+        
+        logStackView.addArrangedSubview(label)
+    }
+    
+    private func scrollToLast() {
+        logScrollView.layoutIfNeeded()
+        guard logScrollView.contentSize.height > logScrollView.frame.height else { return }
+        let offset = logScrollView.contentSize.height - logScrollView.frame.height
+        logScrollView.setContentOffset(CGPoint(x: 0, y: offset),
+                                       animated: true)
     }
 }
