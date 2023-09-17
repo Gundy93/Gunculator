@@ -18,7 +18,13 @@ final class CalculatorViewController: UIViewController {
     }()
     private let containerStackView: UIStackView = UIStackView(spacing: 20,
                                                               axis: .vertical)
-    private let logScrollView: UIScrollView = UIScrollView()
+    private let logScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        
+        scrollView.showsVerticalScrollIndicator = false
+        
+        return scrollView
+    }()
     private let logStackView: UIStackView = UIStackView(spacing: 8,
                                                         axis: .vertical)
     private lazy var screenStackView: UIStackView = UIStackView(arrangedSubviews: [signLabel, inputLabel], spacing: 8)
