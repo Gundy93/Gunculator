@@ -9,7 +9,13 @@ import UIKit
 
 final class CalculatorViewController: UIViewController {
     
-    private let viewModel: CalculatorViewModel = CalculatorViewModel()
+    private lazy var viewModel: CalculatorViewModel = {
+        let viewModel = CalculatorViewModel()
+        
+        viewModel.delegate = self
+        
+        return viewModel
+    }()
     private let containerStackView: UIStackView = UIStackView(spacing: 20,
                                                               axis: .vertical)
     private let logScrollView: UIScrollView = UIScrollView()
@@ -77,10 +83,11 @@ final class CalculatorViewController: UIViewController {
             containerStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
             containerStackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
             containerStackView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -20),
-            logStackView.leadingAnchor.constraint(equalTo: logScrollView.leadingAnchor),
-            logStackView.trailingAnchor.constraint(equalTo: logScrollView.trailingAnchor),
-            logStackView.topAnchor.constraint(lessThanOrEqualTo: logScrollView.topAnchor),
-            logStackView.bottomAnchor.constraint(equalTo: logScrollView.bottomAnchor),
+            logStackView.leadingAnchor.constraint(equalTo: logScrollView.contentLayoutGuide.leadingAnchor),
+            logStackView.trailingAnchor.constraint(equalTo: logScrollView.contentLayoutGuide.trailingAnchor),
+            logStackView.topAnchor.constraint(equalTo: logScrollView.contentLayoutGuide.topAnchor),
+            logStackView.bottomAnchor.constraint(equalTo: logScrollView.contentLayoutGuide.bottomAnchor),
+            logStackView.widthAnchor.constraint(equalTo: containerStackView.widthAnchor),
             first.widthAnchor.constraint(equalTo: first.heightAnchor),
             last.widthAnchor.constraint(equalTo: last.heightAnchor),
             zero.widthAnchor.constraint(equalTo: last.widthAnchor, multiplier: 2, constant: 8)
@@ -128,7 +135,8 @@ final class CalculatorViewController: UIViewController {
     
     private func appendLogLabel(_ expression: String) {
         let label = UILabel(text: expression,
-                            font: .preferredFont(forTextStyle: .body))
+                            font: .preferredFont(forTextStyle: .body),
+                            textAlignment: .right)
         
         logStackView.addArrangedSubview(label)
     }
@@ -139,5 +147,21 @@ final class CalculatorViewController: UIViewController {
         let offset = logScrollView.contentSize.height - logScrollView.frame.height
         logScrollView.setContentOffset(CGPoint(x: 0, y: offset),
                                        animated: true)
+    }
+}
+
+extension CalculatorViewController: CalculatorViewModelDelegate {
+    
+    func viewModel(willDisplayNumber inputted: String) {
+        inputLabel.text = inputted
+    }
+    
+    func viewModel(willDisplaySign inputted: String?) {
+        signLabel.text = inputted
+    }
+    
+    func viewModel(willAppend expression: String) {
+        appendLogLabel(expression)
+        scrollToLast()
     }
 }
