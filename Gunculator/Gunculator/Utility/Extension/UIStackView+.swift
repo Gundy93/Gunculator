@@ -20,5 +20,6 @@ extension UIStackView {
         self.axis = axis
         self.alignment = alignment
         self.distribution = distribution
+        translatesAutoresizingMaskIntoConstraints = false
     }
 }
